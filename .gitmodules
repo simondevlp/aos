@@ -4,3 +4,6 @@
 [submodule "aos-uefi"]
 	path = aos-uefi
 	url = ./aos-uefi
+[submodule "aos-kernel"]
+	path = aos-kernel
+	url = ./aos-kernel

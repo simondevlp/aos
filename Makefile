@@ -6,7 +6,7 @@ IMG_NAME = fos.img
 OVMF_FD_PATH = /usr/share/ovmf/OVMF.fd
 
 build:
-	cargo +nightly build -p aos-bootloader --target x86_64-unknown-uefi;
+	cargo build -p aos-bootloader;
 
 clean-dir:
 	rm -rf ${ESP_DIR_NAME};
