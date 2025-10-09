@@ -1,0 +1,6 @@
+[submodule "aos-bootloader"]
+	path = aos-bootloader
+	url = ./aos-bootloader
+[submodule "aos-uefi"]
+	path = aos-uefi
+	url = ./aos-uefi
