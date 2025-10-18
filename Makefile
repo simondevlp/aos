@@ -6,7 +6,8 @@ IMG_NAME = aos-uefi.img
 OVMF_FD_PATH = /usr/share/ovmf/OVMF.fd
 
 build:
-	cargo build -p aos-bootloader
+	cargo build -p aos-bootloader --target x86_64-unknown-uefi
+	$(MAKE) -C aos-kernel build
 
 clean-dir:
 	rm -rf ${ESP_DIR_NAME}
@@ -14,6 +15,7 @@ clean-dir:
 dir: build
 	mkdir -p ${BOOT_DIR_NAME}
 	cp ${BOOTLOADER_IMAGE_PATH} ${BOOT_DIR_NAME}/bootx64.efi
+	cp aos-kernel/tmp/image.bin ${ESP_DIR_NAME}/image.bin
 
 run-dir: dir
 	qemu-system-x86_64 -drive format=raw,file=fat:rw:${ESP_DIR_NAME} \
@@ -27,6 +29,7 @@ image: build
 	sudo mount -o loop ${IMG_NAME} /tmp/${ESP_DIR_NAME}
 	sudo mkdir -p /tmp/${BOOT_DIR_NAME}
 	sudo cp ${BOOTLOADER_IMAGE_PATH} /tmp/${BOOT_DIR_NAME}/bootx64.efi
+	sudo cp aos-kernel/tmp/image.bin /tmp/${ESP_DIR_NAME}/image.bin
 	sudo umount /tmp/${ESP_DIR_NAME}
 	rmdir /tmp/${ESP_DIR_NAME}
 

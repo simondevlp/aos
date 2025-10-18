@@ -10,9 +10,5 @@ dependencies = [
 ]
 
 [[package]]
-name = "aos-kernel"
-version = "0.1.0"
-
-[[package]]
 name = "aos-uefi"
 version = "0.1.0"
