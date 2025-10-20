@@ -6,9 +6,23 @@ version = 4
 name = "aos-bootloader"
 version = "0.1.0"
 dependencies = [
+ "aos-uefi-wrappers",
+]
+
+[[package]]
+name = "aos-kernel"
+version = "0.1.0"
+dependencies = [
  "aos-uefi",
 ]
 
 [[package]]
 name = "aos-uefi"
 version = "0.1.0"
+
+[[package]]
+name = "aos-uefi-wrappers"
+version = "0.1.0"
+dependencies = [
+ "aos-uefi",
+]

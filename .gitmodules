@@ -4,3 +4,6 @@
 [submodule "aos-uefi"]
 	path = aos-uefi
 	url = ./aos-uefi
+[submodule "aos-uefi-wrappers"]
+	path = aos-uefi-wrappers
+	url = ../aos-uefi-wrappers
