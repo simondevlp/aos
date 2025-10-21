@@ -13,7 +13,7 @@ dependencies = [
 name = "aos-kernel"
 version = "0.1.0"
 dependencies = [
- "aos-uefi",
+ "aos-uefi-wrappers",
 ]
 
 [[package]]
